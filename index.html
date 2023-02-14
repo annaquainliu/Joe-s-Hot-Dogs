@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type='text/css' href="hotdogs.css">
+    <title>Joe's Hot Dogs</title>
+</head>
+<body>
+    <h1>Joe's Hot Dogs</h1>
+    <p><b>10%</b> discount for orders at least <b style="opacity: 100%">$20</b>!</p>
+    <div id="page">
+        <div id="items">
+            <div class="item">
+                <div class="food" id="hotdog"></div>
+                <div class="price">
+                    <p class="itemName">Hot Dog</p>
+                    <p class="price">$4.00</p>
+                    <div class="button">Purchase</div>
+                    <p class="ingredients">Ingredients:</p>
+                    <p class="ingredientsList">Pork, wheat, soy, garlic, pepper, garlic, coriander</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="food" id="frenchFries"></div>
+                <div class="price">
+                    <p class="itemName">French Fries</p>
+                    <p class="price">$3.50</p>
+                    <div class="button">Purchase</div>
+                    <p class="ingredients">Ingredients:</p>
+                    <p class="ingredientsList">Potato, coriander, salt, pepper, olive oil</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="food" id="drinks"></div>
+                <div class="price">
+                    <p class="itemName">Drinks</p>
+                    <p class="price">$1.70</p>
+                    <div class="button" id="drink">Purchase</div>
+                    <p class="ingredients">Ingredients:</p>
+                    <p class="ingredientsList">Carbonated water, sugar</p>
+                </div>
+            </div>
+        </div>
+        <div id="cart">
+            <p id="cartHeader">CART</p>
+            <div id="purchasedItems">
+                <div class="purchaseItem" style="opacity: 100%">
+                    <div><b>Item</b></div>
+                    <div><b>Quantity</b></div>
+                    <div><b>Subtotal</b></div>
+                </div>
+                <div class="purchaseItem">
+                    <div>Hot Dog</div>
+                    <div id="hotdog_quantity">x0</div>
+                    <div id="hotdog_price">0.00</div>
+                </div>
+                <div class="purchaseItem">
+                    <div>French Fries</div>
+                    <div id="frenchfry_quantity">x0</div>
+                    <div id="frenchfry_price">0.00</div>
+                </div>
+                <div class="purchaseItem">
+                    <div>Drinks</div>
+                    <div id="drink_quantity">x0</div>
+                    <div id="drink_price">0.00</div>
+                </div>
+                <div class="purchaseItem">
+                    <div>Tax</div>
+                    <div id="tax">0.00</div>
+                </div>
+                <div class="purchaseItem">
+                    <div>Discount</div>
+                    <div id="discount">-0.00</div>
+                </div>
+                <div class="purchaseItem" style="opacity: 100%;">
+                    <div style="font-size: 2.5vw;"><b>Total:</b></div>
+                    <div style="font-size: 2.5vw;" id="totalPrice"><b>0.00</b></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="hotdogs.js"></script>
+</body>
+</html>
