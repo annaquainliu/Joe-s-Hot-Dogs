@@ -1,6 +1,7 @@
 const items = {"hotdog": 4.00, "frenchfry": 3.50, "drink": 1.75};
 const totalPriceElem = document.getElementById('totalPrice');
 const taxElem = document.getElementById('tax');
+const subtotal = document.getElementById('subtotal');
 const tax = 0.0625;
 var totalPrice = 0;
 
@@ -25,6 +26,8 @@ if (totalPrice >= 20.00) {
     discountElem.innerText = "-$" + discount;
     totalPrice -= discount;
 }
+
+subtotal.innerText = round(totalPrice);
 
 var taxPrice = round(tax * totalPrice);
 taxElem.innerText = "$" + taxPrice;
