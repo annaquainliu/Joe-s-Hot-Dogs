@@ -17,10 +17,12 @@ for (let key in items) {
     let price = round(quantity * items[key]);
     priceElem.innerText = displayPrice(price);
     totalPrice += price;
-    // console.log(quantityElem.innerText, priceElem.innerText);
 }
 
+console.log(totalPrice);
+
 if (totalPrice >= 20.00) {
+    console.log(0.1 * totalPrice);
     const discount = round(0.1 * totalPrice);
     const discountElem = document.getElementById('discount');
     discountElem.innerText = "-" + displayPrice(discount);
@@ -34,10 +36,27 @@ taxElem.innerText = displayPrice(taxPrice);
 
 totalPrice += taxPrice;
 
+console.log(totalPrice);
+
 totalPriceElem.innerText = displayPrice(round(totalPrice));
 
 function round(price) {
-    return Math.round(price * 100) / 100;
+
+    let displayedPrice = "" + price;
+    var priceSplit = displayedPrice.split('.');
+    //if there is no decimal, or the decimal is only to the hundredths place
+    if (priceSplit.length == 1 || (priceSplit.length > 1 && priceSplit[1].length <= 2)) {
+        return price;
+    }
+    let thousandthsPlace = parseInt(priceSplit[1][2]);
+    let decimal = parseInt((priceSplit[1]).slice(0, 2)) / 100;
+    //if there is a decimal and it needs rounding 
+    if (thousandthsPlace >= 5) {
+       decimal += 0.01;
+    }
+
+    return parseInt(priceSplit[0]) + decimal;
+    
 }
 
 function displayPrice(price) {
@@ -50,5 +69,9 @@ function displayPrice(price) {
     else if (priceSplit.length > 1 && priceSplit[1].length == 1) { 
         displayedPrice += "0";
     }
+    else if (priceSplit.length > 1 && priceSplit[1].length > 2) {
+        displayedPrice = priceSplit[0] + "." + priceSplit[1].slice(0, 2);
+    }
     return "$" + displayedPrice;
 }
+
